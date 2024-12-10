@@ -40,14 +40,14 @@ export default function Layout() {
     const h = Math.floor(time / 3600);
     const m = Math.floor((time % 3600) / 60);
     const s = time % 60;
-    if(h>0){
-      return `${h}小时${m }分钟${s}秒`;
+    if (h > 0) {
+      return `${h}小时${m}分钟${s}秒`;
     }
-    if(m>0){
+    if (m > 0) {
       return `${m}分钟${s}秒`;
     }
     return `${s}秒`;
-  }
+  };
 
   return (
     <ConfigProvider
@@ -58,23 +58,25 @@ export default function Layout() {
         algorithm: darkMode ? theme.darkAlgorithm : theme.defaultAlgorithm,
       }}
     >
-      <Auth>
-        <div className="layouts">
-          <div className="header">
-            <div>
-              <span>{moment().format("YYYY-MM-DD HH:mm:ss")}</span>
-              <span className="time-span">{`已登录时长：${formatTime(time)}`}</span>
+      <App>
+        <Auth>
+          <div className="layouts">
+            <div className="header">
+              <div>
+                <span>{moment().format("YYYY-MM-DD HH:mm:ss")}</span>
+                <span className="time-span">{`已登录时长：${formatTime(time)}`}</span>
+              </div>
+              <Switch
+                checkedChildren={<MoonOutlined />}
+                unCheckedChildren={<SunOutlined />}
+                checked={darkMode}
+                onChange={(value) => setTheme(!value)}
+              />
             </div>
-            <Switch
-              checkedChildren={<MoonOutlined />}
-              unCheckedChildren={<SunOutlined />}
-              checked={darkMode}
-              onChange={(value) => setTheme(!value)}
-            />
+            <Outlet />
           </div>
-          <Outlet />
-        </div>
-      </Auth>
+        </Auth>
+      </App>
     </ConfigProvider>
   );
 }
