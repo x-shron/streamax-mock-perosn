@@ -1,3 +1,4 @@
 export default [
-  { path: "/", component: "index",exact: true },
+  { path: "/", redirect: "/streamax-mock-person" },
+  { path: "/streamax-mock-person", component: "index" },
 ];
