@@ -5,7 +5,7 @@ import routes from "./src/routes";
 export default defineConfig({
   routes: [
     ...routes,
-    { path: "/*", exact: true, component: '@/pages/404'},
+    { path: "/*", exact: true, component: '@/pages/index'},
   ],
   alias: {
     "@": "/src",

@@ -18,9 +18,9 @@ const baseRequired = [
   "ip",
   "port",
   "protocol",
-  // "_tenantId",
-  // "_appId",
-  // "_userId",
+  "_tenantId",
+  "_appId",
+  "_userId",
   '_token'
 ];
 
@@ -35,7 +35,7 @@ export default function HomePage() {
     setLoading(true);
     request({
       data: params,
-      url: `${protocol}://${ip}${port ? `:${port}` : ""}/gateway/ks-manager/internal/person/device/simulate`,
+      url: `${protocol}://${ip}${port ? `:${port}` : ""}/internal/person/device/simulate`,
       method: "POST",
       headers: {
         _tenantId,
@@ -114,16 +114,16 @@ export default function HomePage() {
           <Form form={form} layout="vertical">
             <p className="mock-person-gps-title">用户信息</p>
             <Row gutter={60}>
-              <Col span={24}>
+              <Col span={8}>
                 <Form.Item
-                  label="token"
-                  name="_token"
-                  rules={[{ required: true, message: "请输入token" }]}
+                  label="租户id"
+                  name="_tenantId"
+                  rules={[{ required: true, message: "请输入租户id" }]}
                 >
-                  <Input.TextArea rows={5} placeholder="请输入token" />
+                  <Input placeholder="请输入租户id" />
                 </Form.Item>
               </Col>
-              {/* <Col span={8}>
+              <Col span={8}>
                 <Form.Item
                   label="用户id"
                   name="_userId"
@@ -141,7 +141,7 @@ export default function HomePage() {
                 >
                   <Input placeholder="请输入应用id" />
                 </Form.Item>
-              </Col> */}
+              </Col> 
             </Row>
             <p className="mock-person-gps-title">设备服务器信息</p>
             <Row gutter={60}>
@@ -150,7 +150,7 @@ export default function HomePage() {
                   label="协议"
                   name="protocol"
                   rules={[{ required: true }]}
-                  initialValue={"https"}
+                  initialValue={"http"}
                 >
                   <Select
                     placeholder="请选择协议"
@@ -174,7 +174,7 @@ export default function HomePage() {
                 <Form.Item
                   label="服务器端口"
                   name="port"
-                  initialValue={20551}
+                  initialValue={28050}
                 >
                   <Input placeholder="请输入服务器端口" />
                 </Form.Item>
