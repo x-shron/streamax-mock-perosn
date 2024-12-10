@@ -10,6 +10,7 @@ export default defineConfig({
   alias: {
     "@": "/src",
   },
+  hash: true,
   npmClient: 'yarn',
   publicPath: process.env.NODE_ENV === 'production' ? './' : '/',
   outputPath: 'docs',

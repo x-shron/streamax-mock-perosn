@@ -44,7 +44,11 @@ export default function HomePage() {
     })
       .then((res: any) => {
         console.log("13123123", res);
-        message.success("操作成功");
+        if(res.data.success){
+            message.success("操作成功");
+        }else{
+          message.error(`操作失败: ${res.data.message}`);
+        }
       },()=>{
         message.error("操作失败");
       })
