@@ -34,7 +34,7 @@ export default function HomePage() {
     setLoading(true);
     request({
       data: params,
-      url: `${protocol}://${ip}${port ? `:${port}` : ""}/internal/person/device/stop`,
+      url: `${protocol}://${ip}${port ? `:${port}` : ""}/internal/person/device/simulate`,
       method: "POST",
       headers: {
         _tenantId,
@@ -174,12 +174,11 @@ export default function HomePage() {
               </Col>
               <Col span={8}>
                 <Form.Item
-                  initialValue={1}
                   label="设备起始编号"
                   name="deviceStartNumber"
                   rules={[{ required: true, message: "请输入设备起始编号" }]}
                 >
-                  <InputNumber placeholder="请输入设备起始编号" />
+                  <Input placeholder="请输入设备起始编号" />
                 </Form.Item>
               </Col>
               <Col span={8}>
@@ -197,7 +196,6 @@ export default function HomePage() {
                   initialValue={10}
                   label="GPS间隔时间（秒）"
                   name="gpsInterval"
-                  rules={[{ required: true, message: "请输入GPS间隔时间" }]}
                 >
                   <InputNumber placeholder="请输入GPS间隔时间" />
                 </Form.Item>
@@ -207,7 +205,6 @@ export default function HomePage() {
                 <Form.Item
                   name="gpsInfoList"
                   label="GPS信息列表"
-                  rules={[{ required: true, message: "请输入GPS信息列表" }]}
                 >
                   <Input.TextArea
                     placeholder="请输入GPS信息列表, 每个gps点需换行输入, 格式为:经度,纬度"
