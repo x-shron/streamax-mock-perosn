@@ -86,10 +86,11 @@ export default function HomePage() {
         const { gpsInfoList, deviceNum, deviceStartNumber, gpsInterval } =
           values;
         const gpsList = gpsInfoList.split("\n").map((item: any) => {
-          const [lng, lat,mapId,x,y,z] = item.split(",");
+          const [lng, lat,type,mapId,x,y,z] = item.split(",");
           return {
             lng,
             lat,
+            type,
             mapId,x,y,z
           };
         });
@@ -214,7 +215,7 @@ export default function HomePage() {
                   label="GPS信息列表"
                 >
                   <Input.TextArea
-                    placeholder="请输入GPS信息列表, 每个gps点需换行输入, 格式为:&#10;经度,纬度,mapId,x,y,z"
+                    placeholder="请输入GPS信息列表, 每个gps点需换行输入, 格式为:&#10;经度,纬度,type,mapId,x,y,z"
                     rows={6}
                   />
                 </Form.Item>
