@@ -209,7 +209,7 @@ export default function HomePage() {
                 </Form.Item>
               </Col>
 
-              <Col span={8}>
+              <Col span={24}>
                 <Form.Item
                   name="gpsInfoList"
                   label="GPS信息列表"
