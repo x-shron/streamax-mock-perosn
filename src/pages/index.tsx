@@ -95,7 +95,7 @@ export default function HomePage() {
         });
         save(
           {
-            gpsList,
+            gpsInfoList: gpsList,
             gpsSendState,
             deviceNum,
             deviceStartNumber,
