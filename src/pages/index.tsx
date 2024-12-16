@@ -124,11 +124,11 @@ export default function HomePage() {
                   <Input.TextArea rows={5} placeholder="请输入token" />
                 </Form.Item>
               </Col>
-              {/* <Col span={8}>
+              <Col span={8}>
                 <Form.Item
-                  label="用户id"
-                  name="_userId"
-                  rules={[{ required: true, message: "请输入用户id" }]}
+                  label="租户Id"
+                  name="_tenantId"
+                  rules={[{ required: true,message: "请输入用户id" }]}
                 >
                   <Input placeholder="请输入用户id" />
                 </Form.Item>
@@ -142,7 +142,7 @@ export default function HomePage() {
                 >
                   <Input placeholder="请输入应用id" />
                 </Form.Item>
-              </Col> */}
+              </Col>
             </Row>
             <p className="mock-person-gps-title">设备服务器信息</p>
             <Row gutter={60}>
@@ -216,7 +216,7 @@ export default function HomePage() {
                 >
                   <Input.TextArea
                     placeholder="请输入GPS信息列表, 每个gps点需换行输入, 格式为:&#10;经度,纬度,type,mapId,x,y,z"
-                    rows={6}
+                    rows={4}
                   />
                 </Form.Item>
               </Col>
