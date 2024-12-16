@@ -128,9 +128,9 @@ export default function HomePage() {
                 <Form.Item
                   label="租户Id"
                   name="_tenantId"
-                  rules={[{ required: true,message: "请输入用户id" }]}
+                  rules={[{ required: true,message: "请输入租户id" }]}
                 >
-                  <Input placeholder="请输入用户id" />
+                  <Input placeholder="请输入租户id" />
                 </Form.Item>
               </Col>
               <Col span={8}>
