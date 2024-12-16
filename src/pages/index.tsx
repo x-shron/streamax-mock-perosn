@@ -18,8 +18,8 @@ const baseRequired = [
   "ip",
   "port",
   "protocol",
-  // "_tenantId",
-  // "_appId",
+  "_tenantId",
+  "_appId",
   // "_userId",
   '_token'
 ];
