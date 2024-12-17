@@ -77,7 +77,7 @@ export default function HomePage() {
         .then((values) => {
           setLoading(true);
           const { deviceNum, deviceStartNumber } = values;
-          save({ deviceNum, deviceStartNumber }, values);
+          save({ deviceNum, deviceStartNumber, gpsSendState }, values);
         });
     } else {
       // 开始下发gps
